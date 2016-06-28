@@ -19,7 +19,7 @@ class EditGoalViewController: UIViewController {
     
     
     @IBOutlet weak var titleTextField: UITextField!
-   
+    
     @IBOutlet weak var completedGoalTextField: UITextField!
     
     @IBOutlet weak var totalGoalTextField: UITextField!
@@ -27,19 +27,21 @@ class EditGoalViewController: UIViewController {
     
     @IBAction func saveGoalButtonTapped(sender: AnyObject) {
         if let titleText = titleTextField.text {
-        goal?.title = titleText
+            goal?.title = titleText
+            
+            
+            if let newCompletedTotal = Int(completedGoalTextField.text!) {
+                goal?.completedQuantity = newCompletedTotal
+                
+                
+                if let newTotalGoal = Int(totalGoalTextField.text!) {
+                    goal?.goalQuantity = newTotalGoal
+                    
+                    
+                    dataSource.saveData()
+                }
+            }
         }
-        
-        if let newCompletedTotal = Int(completedGoalTextField.text!) {
-            goal?.completedQuantity = newCompletedTotal
-        }
-        
-        if let newTotalGoal = Int(totalGoalTextField.text!) {
-            goal?.goalQuantity = newTotalGoal
-        }
-        
-        dataSource.saveData()
-        
         
         self.navigationController?.popViewControllerAnimated(true)
         
@@ -58,11 +60,11 @@ class EditGoalViewController: UIViewController {
         
         completedGoalTextField.text = "\(goal!.completedQuantity)"
         totalGoalTextField.text = "\(goal!.goalQuantity)"
-    
+        
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         print(goal)
     }
-            
+    
 }
