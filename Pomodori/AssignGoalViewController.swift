@@ -10,10 +10,26 @@ import UIKit
 
 class AssignGoalViewController: UIViewController {
     
+    let dataSource = GoalDataSource.sharedManager
+    
+    @IBOutlet weak var titleTextField: UITextField!
+    
+    
+    @IBOutlet weak var totalGoalTextField: UITextField!
     @IBAction func saveGoalButtonTapped(sender: AnyObject) {
         
+        if let titleText = titleTextField.text {
+          
+            if let newTotalGoal = Int(totalGoalTextField.text!) {
+                dataSource.createNewGoal(titleText, goalQuantity: newTotalGoal, completedQuantity: 0)
+            }
+        }
+        
+        dataSource.saveData()
+        
+        
         self.dismissViewControllerAnimated(true, completion: nil)
-     
+        
     }
     
     

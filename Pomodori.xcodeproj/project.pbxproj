@@ -60,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				1F7109581CE3EF0800D46831 /* Main.storyboard */,
-				1F3BD0151CE562E00043BBCA /* AssignPomodoroViewController.swift */,
 				1F71095D1CE3EF0800D46831 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -72,6 +71,7 @@
 				1F7109541CE3EF0800D46831 /* FirstViewController.swift */,
 				1F7109661CE436A800D46831 /* GoalsViewController.swift */,
 				1F3BD0171CE563FC0043BBCA /* EditGoalViewController.swift */,
+				1F3BD0151CE562E00043BBCA /* AssignPomodoroViewController.swift */,
 				1F9E33041CEA64AD00A8ADB9 /* AssignGoalViewController.swift */,
 				1F7109521CE3EF0800D46831 /* AppDelegate.swift */,
 			);

@@ -15,7 +15,7 @@ class FirstViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var timer: NSTimer!
     
-    var minuteLabel = 1
+    var minuteLabel = 25
     
     var secondLabel = 0
     
@@ -61,7 +61,7 @@ class FirstViewController: UIViewController, UIGestureRecognizerDelegate {
     func startTimer() {
         
         timerIsRunning = true
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(tickDown), userInfo: nil, repeats: true)
         
         
         

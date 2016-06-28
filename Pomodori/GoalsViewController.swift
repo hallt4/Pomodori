@@ -15,8 +15,14 @@ class GoalsViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
+        
+        
         self.tableView.dataSource = self
         self.tableView.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
     
